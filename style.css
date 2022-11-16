@@ -1,0 +1,106 @@
+html {
+  /* background: #018DED url(https://unsplash.it/1500/1000?image=881&blur=5);
+  background-size: cover; */
+  background: linear-gradient(45deg, darkred 20%, crimson, darkorange 60%, gold, bisque);
+  font-family: 'helvetica neue';
+  text-align: center;
+  font-size: 10px;
+}
+
+body {
+  margin: 0;
+  font-size: 2rem;
+  display: flex;
+  flex: 1;
+  min-height: 100vh;
+  align-items: center;
+}
+
+.clock {
+  width: 30rem;
+  height: 30rem;
+  border: 15px solid white;
+  border-radius: 50%;
+  margin: 50px auto;
+  position: relative;
+  padding: 2rem;
+  box-shadow:
+    0 0 0 4px rgba(0,0,0,0.1),
+    inset 0 0 0 3px #EFEFEF,
+    inset 0 0 10px black,
+    0 0 10px rgba(0,0,0,0.2);
+  animation-name: grow;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease;
+  animation-duration: 15s;
+}
+
+@keyframes grow {
+  0% {
+    box-shadow:
+    0 0 0 4px rgba(0,0,0,0.1),
+    inset 0 0 0 3px #EFEFEF,
+    inset 0 0 10px black,
+    0 0 10px rgba(0,0,0,0.2);
+  }
+  50% {
+    box-shadow:
+    0 0 0 54px rgba(0,0,0,0.1),
+    inset 0 0 0 28px #EFEFEF,
+    inset 0 0 0 120px rgb(194, 192, 192),
+    0 0 10px rgba(0,0,0,0.2);
+  }
+  100% {
+    box-shadow:
+    0 0 0 4px rgba(0,0,0,0.1),
+    inset 0 0 0 3px #EFEFEF,
+    inset 0 0 10px black,
+    0 0 10px rgba(0,0,0,0.2);
+  }
+}
+
+.clock-face {
+  background-image: url('image.png');
+  background-size:cover;
+  background-repeat: no-repeat;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform: translateY(-3px);
+  /* account for the height of the clock hands */
+}
+
+.hand {
+  width: 50%;
+  height: 6px;
+  background: black;
+  position: absolute;
+  top: 50%;
+  transform-origin: 100%;
+  transform: rotate(90deg);
+  transition: transform 0.5s cubic-bezier(0.37, 1.44, 0.48, 1.17);
+}
+
+.min-hand {
+  background-color: white;
+  width: 35%;
+  left: 15%;
+  height: 4px;
+  border-radius: 5px;
+}
+
+.hour-hand {
+  background-color: #eeeef5;
+  width: 28%;
+  left: 22%;
+  height: 9px;
+  border-radius: 15px;
+}
+
+.second-hand {
+  width: 43%;
+  left: 7%;
+  height: 3px;
+  border-radius: 10px;
+  /* transition: none; */
+}
